@@ -25,6 +25,7 @@ stat605_2015_2024_raw.tar
 results/*
 !results/report_figures/
 !results/report_figures/**
+results/report_figures/.DS_Store
 
 # Keep only code for this project
 # (other coursework folders/files are intentionally excluded by not adding them)
