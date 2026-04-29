@@ -1,0 +1,121 @@
+universe = vanilla
+initialdir = /home/yli2827/stat605_delay_pipeline
+executable = chtc/build_pairs_one_partition.sh
+arguments = $(partition_path) processed/pairs_2015_2024
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+preserve_relative_paths = True
+transfer_input_files = scripts/build_pairs_one_partition.py,scripts/pipeline_utils.py,python_deps,$(partition_path)
+transfer_output_files = processed/pairs_2015_2024
+
+output = logs/chtc_pairs_all_2015_2024_$(cluster)_$(process).out
+error = logs/chtc_pairs_all_2015_2024_$(cluster)_$(process).err
+log = logs/chtc_pairs_all_2015_2024_$(cluster).log
+
+request_cpus = 1
+request_memory = 6GB
+request_disk = 12GB
+
+queue partition_path from (
+processed/partitions_2015_2024/part_000.csv
+processed/partitions_2015_2024/part_001.csv
+processed/partitions_2015_2024/part_002.csv
+processed/partitions_2015_2024/part_003.csv
+processed/partitions_2015_2024/part_004.csv
+processed/partitions_2015_2024/part_005.csv
+processed/partitions_2015_2024/part_006.csv
+processed/partitions_2015_2024/part_007.csv
+processed/partitions_2015_2024/part_008.csv
+processed/partitions_2015_2024/part_009.csv
+processed/partitions_2015_2024/part_010.csv
+processed/partitions_2015_2024/part_011.csv
+processed/partitions_2015_2024/part_012.csv
+processed/partitions_2015_2024/part_013.csv
+processed/partitions_2015_2024/part_014.csv
+processed/partitions_2015_2024/part_015.csv
+processed/partitions_2015_2024/part_016.csv
+processed/partitions_2015_2024/part_017.csv
+processed/partitions_2015_2024/part_018.csv
+processed/partitions_2015_2024/part_019.csv
+processed/partitions_2015_2024/part_020.csv
+processed/partitions_2015_2024/part_021.csv
+processed/partitions_2015_2024/part_022.csv
+processed/partitions_2015_2024/part_023.csv
+processed/partitions_2015_2024/part_024.csv
+processed/partitions_2015_2024/part_025.csv
+processed/partitions_2015_2024/part_026.csv
+processed/partitions_2015_2024/part_027.csv
+processed/partitions_2015_2024/part_028.csv
+processed/partitions_2015_2024/part_029.csv
+processed/partitions_2015_2024/part_030.csv
+processed/partitions_2015_2024/part_031.csv
+processed/partitions_2015_2024/part_032.csv
+processed/partitions_2015_2024/part_033.csv
+processed/partitions_2015_2024/part_034.csv
+processed/partitions_2015_2024/part_035.csv
+processed/partitions_2015_2024/part_036.csv
+processed/partitions_2015_2024/part_037.csv
+processed/partitions_2015_2024/part_038.csv
+processed/partitions_2015_2024/part_039.csv
+processed/partitions_2015_2024/part_040.csv
+processed/partitions_2015_2024/part_041.csv
+processed/partitions_2015_2024/part_042.csv
+processed/partitions_2015_2024/part_043.csv
+processed/partitions_2015_2024/part_044.csv
+processed/partitions_2015_2024/part_045.csv
+processed/partitions_2015_2024/part_046.csv
+processed/partitions_2015_2024/part_047.csv
+processed/partitions_2015_2024/part_048.csv
+processed/partitions_2015_2024/part_049.csv
+processed/partitions_2015_2024/part_050.csv
+processed/partitions_2015_2024/part_051.csv
+processed/partitions_2015_2024/part_052.csv
+processed/partitions_2015_2024/part_053.csv
+processed/partitions_2015_2024/part_054.csv
+processed/partitions_2015_2024/part_055.csv
+processed/partitions_2015_2024/part_056.csv
+processed/partitions_2015_2024/part_057.csv
+processed/partitions_2015_2024/part_058.csv
+processed/partitions_2015_2024/part_059.csv
+processed/partitions_2015_2024/part_060.csv
+processed/partitions_2015_2024/part_061.csv
+processed/partitions_2015_2024/part_062.csv
+processed/partitions_2015_2024/part_063.csv
+processed/partitions_2015_2024/part_064.csv
+processed/partitions_2015_2024/part_065.csv
+processed/partitions_2015_2024/part_066.csv
+processed/partitions_2015_2024/part_067.csv
+processed/partitions_2015_2024/part_068.csv
+processed/partitions_2015_2024/part_069.csv
+processed/partitions_2015_2024/part_070.csv
+processed/partitions_2015_2024/part_071.csv
+processed/partitions_2015_2024/part_072.csv
+processed/partitions_2015_2024/part_073.csv
+processed/partitions_2015_2024/part_074.csv
+processed/partitions_2015_2024/part_075.csv
+processed/partitions_2015_2024/part_076.csv
+processed/partitions_2015_2024/part_077.csv
+processed/partitions_2015_2024/part_078.csv
+processed/partitions_2015_2024/part_079.csv
+processed/partitions_2015_2024/part_080.csv
+processed/partitions_2015_2024/part_081.csv
+processed/partitions_2015_2024/part_082.csv
+processed/partitions_2015_2024/part_083.csv
+processed/partitions_2015_2024/part_084.csv
+processed/partitions_2015_2024/part_085.csv
+processed/partitions_2015_2024/part_086.csv
+processed/partitions_2015_2024/part_087.csv
+processed/partitions_2015_2024/part_088.csv
+processed/partitions_2015_2024/part_089.csv
+processed/partitions_2015_2024/part_090.csv
+processed/partitions_2015_2024/part_091.csv
+processed/partitions_2015_2024/part_092.csv
+processed/partitions_2015_2024/part_093.csv
+processed/partitions_2015_2024/part_094.csv
+processed/partitions_2015_2024/part_095.csv
+processed/partitions_2015_2024/part_096.csv
+processed/partitions_2015_2024/part_097.csv
+processed/partitions_2015_2024/part_098.csv
+processed/partitions_2015_2024/part_099.csv
+)

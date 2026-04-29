@@ -1,0 +1,22 @@
+universe = vanilla
+initialdir = /home/yli2827/stat605_delay_pipeline
+executable = chtc/clean_one_month.sh
+arguments = $(input_path) processed/monthly_clean
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+preserve_relative_paths = True
+transfer_input_files = scripts/clean_one_month.py,scripts/pipeline_utils.py,python_deps,data/raw/On_Time_Reporting_Carrier_On_Time_Performance_1987_present_2024_9.zip
+transfer_output_files = processed/monthly_clean
+
+output = logs/chtc_clean_$(cluster)_$(process).out
+error = logs/chtc_clean_$(cluster)_$(process).err
+log = logs/chtc_clean_$(cluster).log
+
+request_cpus = 1
+request_memory = 6GB
+request_disk = 12GB
+
+queue input_path from (
+data/raw/On_Time_Reporting_Carrier_On_Time_Performance_1987_present_2024_9.zip
+)

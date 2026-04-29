@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>team_slides_playbook_zh</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="团队汇报执行手册中文完整版">团队汇报执行手册（中文完整版）</h1>
+<h2
+id="美国国内航班同机延误传播项目2015-2024">美国国内航班同机延误传播项目（2015-2024）</h2>
+<p>这份文档是给“没参与具体开发/计算的队友”准备的。<br />
+目标是让任何人都能看懂：</p>
+<ol type="1">
+<li>我们到底做了什么；</li>
+<li>为什么要这么分任务和跑 CHTC；</li>
+<li>每一步产出了什么；</li>
+<li>结果怎么讲到 slides 里。</li>
+</ol>
+<hr />
+<h2 id="一句话项目结论先看这个">0. 一句话项目结论（先看这个）</h2>
+<p>我们用 2015-2024 年 BTS
+月度航班数据，按同一架飞机（<code>TAIL_NUM</code>）连接前后航段后发现：</p>
+<ul>
+<li>前序航班晚到与下一段“严重晚点（出发晚点 &gt; 15
+分钟）”风险显著正相关；</li>
+<li>平均每 +10 分钟前序晚到，对应下一段严重晚点赔率约 <strong>1.45
+倍</strong>；</li>
+<li>过站时间越短，传播越强（20-44 分钟的 carry-over 最强）。</li>
+</ul>
+<hr />
+<h2 id="项目目标与分析范围">1. 项目目标与分析范围</h2>
+<h3 id="研究问题">1.1 研究问题</h3>
+<p>当前一段航班晚到后，延误会传递到同一架飞机后续航班吗？传递强度多大？在哪些场景更明显？</p>
+<h3 id="最终主线汇报采用">1.2 最终主线（汇报采用）</h3>
+<ul>
+<li>主结果：logistic（风险视角）</li>
+<li>辅助：linear（分钟数视角）</li>
+<li>异质性：只讲两个维度
+<ul>
+<li>航司差异</li>
+<li>过站时间差异（turnaround bin）</li>
+</ul></li>
+</ul>
+<h3 id="时间范围">1.3 时间范围</h3>
+<ul>
+<li>2015-01 到 2024-12（10 年，120 个月文件）</li>
+</ul>
+<hr />
+<h2 id="数据与规模队友必须知道的数字">2.
+数据与规模（队友必须知道的数字）</h2>
+<p>数据源：</p>
+<ul>
+<li>U.S. Bureau of Transportation Statistics（BTS）On-Time Performance
+月度数据</li>
+</ul>
+<p>规模：</p>
+<ul>
+<li>原始压缩包：约
+<strong>3.19GB</strong>（<code>stat605_2015_2024_raw.tar</code>）</li>
+<li>清洗后分区分配总行数：约 <strong>61,690,070</strong></li>
+<li>最终建模 flight pairs：<strong>53,268,469</strong></li>
+<li>仅 2024 年 pairs：<strong>6,021,015</strong></li>
+</ul>
+<p>说明：</p>
+<ul>
+<li>原始 CSV 不修改；</li>
+<li>不合并成一个超大 raw 文件；</li>
+<li>全流程按阶段写中间产物，保证可复现。</li>
+</ul>
+<hr />
+<h2 id="变量与构造讲方法时可直接引用">3.
+变量与构造（讲方法时可直接引用）</h2>
+<h3 id="原始核心字段">3.1 原始核心字段</h3>
+<ul>
+<li><code>TAIL_NUM</code></li>
+<li><code>FL_DATE</code></li>
+<li><code>OP_UNIQUE_CARRIER</code></li>
+<li><code>ORIGIN</code>, <code>DEST</code></li>
+<li><code>CRS_DEP_TIME</code>, <code>CRS_ARR_TIME</code></li>
+<li><code>DEP_DELAY</code>, <code>ARR_DELAY</code></li>
+<li><code>DISTANCE</code></li>
+<li><code>CANCELLED</code>, <code>DIVERTED</code></li>
+</ul>
+<h3 id="衍生字段清洗配对后">3.2 衍生字段（清洗/配对后）</h3>
+<ul>
+<li><code>sched_dep_hour</code>, <code>sched_arr_hour</code></li>
+<li><code>sched_dep_timestamp</code>,
+<code>sched_arr_timestamp</code>（含跨夜修正）</li>
+<li><code>route = ORIGIN-DEST</code></li>
+<li><code>scheduled_turnaround_minutes</code></li>
+<li><code>same_airport_connection = 1(prev_DEST == current_ORIGIN)</code></li>
+<li><code>current_dep_delayed_15 = 1(current_DEP_DELAY &gt; 15)</code></li>
+<li><code>prev_arr_delayed_15 = 1(prev_ARR_DELAY &gt; 15)</code></li>
+<li><code>turnaround_bin</code>:
+<ul>
+<li><code>20-44</code></li>
+<li><code>45-89</code></li>
+<li><code>90-179</code></li>
+<li><code>180-600</code></li>
+</ul></li>
+</ul>
+<hr />
+<h2 id="我们实际做了什么按执行顺序">4.
+我们实际做了什么（按执行顺序）</h2>
+<p>这一节是“全流程流水账 + 目的解释”，给队友看最有用。</p>
+<h3 id="step-a准备与清洗按月并行">Step A：准备与清洗（按月并行）</h3>
+<p>做法：</p>
+<ul>
+<li>每个月一个 cleaning job；</li>
+<li>去掉关键字段缺失、取消、备降；</li>
+<li>生成标准时间字段（含跨夜修正）。</li>
+</ul>
+<p>为什么这样做：</p>
+<ul>
+<li>月度并行最自然，单任务体量可控；</li>
+<li>后续 CHTC 可以高并发提交，失败也容易重跑。</li>
+</ul>
+<h3 id="step-b全样本按-tail-分区不是按年分区">Step B：全样本按 tail
+分区（不是按年分区）</h3>
+<p>做法：</p>
+<ul>
+<li>读取全部 cleaned months；</li>
+<li>用 <code>hash(TAIL_NUM) % 100</code> 分成 100 个 partition；</li>
+<li>保证同一架飞机永远在同一个 partition。</li>
+</ul>
+<p>为什么这样做：</p>
+<ul>
+<li>防止同一飞机跨年相邻航段被拆散；</li>
+<li>支持后续按 partition 并行构 pair。</li>
+</ul>
+<h3 id="step-c构建连续航段-pairs按-partition-并行">Step C：构建连续航段
+pairs（按 partition 并行）</h3>
+<p>做法：</p>
+<ul>
+<li>每个 partition 一个 job；</li>
+<li>按 <code>TAIL_NUM + sched_dep_timestamp</code> 排序；</li>
+<li>当前航班配对前一航班；</li>
+<li>只保留：
+<ul>
+<li><code>prev_DEST == current_ORIGIN</code></li>
+<li><code>20 &lt;= scheduled_turnaround_minutes &lt;= 600</code></li>
+</ul></li>
+</ul>
+<p>为什么这样做：</p>
+<ul>
+<li>这是同机延误传播最核心定义；</li>
+<li>去掉不合理连接，避免噪声配对。</li>
+</ul>
+<h3 id="step-d先跑主模型稳定优先">Step D：先跑主模型（稳定优先）</h3>
+<p>做法：</p>
+<ul>
+<li>一开始试过大窗口 pooled job（3 年一组/全量），多次遇到 OOM
+held；</li>
+<li>改为“按年跑主模型”（10 个 job），显著更稳；</li>
+<li>对重负载年份单独提内存补跑（2018/2019/2024）。</li>
+</ul>
+<p>为什么这样做：</p>
+<ul>
+<li>CHTC 上高内存可用槽位有限；</li>
+<li>年度任务更容易排队和恢复；</li>
+<li>先保证主结果完整，比一次性全量失败更可靠。</li>
+</ul>
+<h3 id="step-e单独补跑-2024-异质性">Step E：单独补跑 2024 异质性</h3>
+<p>做法：</p>
+<ul>
+<li>单独提交 2024 heterogeneity job；</li>
+<li>跑 <code>airline</code> 与 <code>turnaround</code>
+两个交互模型；</li>
+<li>产出异质性图表。</li>
+</ul>
+<p>为什么这样做：</p>
+<ul>
+<li>异质性模型更吃内存与时间；</li>
+<li>拆开跑可降低主流程失败风险；</li>
+<li>汇报里用 2024 做异质性展示足够清晰。</li>
+</ul>
+<h3 id="step-f结果回传本地并制图打包">Step
+F：结果回传本地并制图打包</h3>
+<p>做法：</p>
+<ul>
+<li>用 <code>rsync</code> 把 CHTC 结果拉回本地；</li>
+<li>统一生成 <code>results/report_figures</code> 图包；</li>
+<li>生成英文/中文文档（HTML+PDF）。</li>
+</ul>
+<p>为什么这样做：</p>
+<ul>
+<li>避免现场演示时远端依赖；</li>
+<li>所有人直接拿本地成品文件做 slides。</li>
+</ul>
+<hr />
+<h2 id="chtc-是怎么跑的新手版">5. CHTC 是怎么跑的（新手版）</h2>
+<h3 id="登录与目录">5.1 登录与目录</h3>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> yli2827@ap2001.chtc.wisc.edu</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/stat605_delay_pipeline</span></code></pre></div>
+<h3 id="查看任务状态">5.2 查看任务状态</h3>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">condor_q</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">condor_q</span> <span class="at">-hold</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">condor_q</span> <span class="op">&lt;</span>cluster_id<span class="op">&gt;</span> -nobatch</span></code></pre></div>
+<h3 id="查看-held-原因">5.3 查看 held 原因</h3>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">condor_q</span> <span class="at">-hold</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">condor_q</span> <span class="op">&lt;</span>cluster_id<span class="op">&gt;</span>.<span class="op">&lt;</span>proc_id<span class="op">&gt;</span> -better-analyze</span></code></pre></div>
+<p>我们最常见 hold：</p>
+<ul>
+<li><code>34/102</code>：cgroup memory 超限（OOM）</li>
+</ul>
+<h3 id="主模型任务提交按年">5.4 主模型任务提交（按年）</h3>
+<p>使用：</p>
+<ul>
+<li><code>chtc/fit_delay_models_years_2015_2024_main.sub</code></li>
+</ul>
+<p>特点：</p>
+<ul>
+<li>一年一个 job（共 10 个）</li>
+<li>稳定性高于大窗口 pooled job</li>
+</ul>
+<h3 id="重负载年份补跑">5.5 重负载年份补跑</h3>
+<p>使用：</p>
+<ul>
+<li><code>chtc/fit_delay_models_retry_2018_2019_2024.sub</code></li>
+</ul>
+<p>特点：</p>
+<ul>
+<li>只重跑失败年份；</li>
+<li>提高内存，避免整批重来。</li>
+</ul>
+<h3 id="异质性提交">5.6 2024 异质性提交</h3>
+<p>使用：</p>
+<ul>
+<li><code>chtc/fit_delay_models_2024_hetero.sub</code></li>
+</ul>
+<p>特点：</p>
+<ul>
+<li>单年单任务；</li>
+<li>专门跑交互项（airline / turnaround）。</li>
+</ul>
+<hr />
+<h2 id="最终结果可直接搬到-slides">6. 最终结果（可直接搬到 slides）</h2>
+<h3 id="年度主结果表2015-2024">6.1 年度主结果表（2015-2024）</h3>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr>
+<th>年份</th>
+<th style="text-align: right;">Pairs</th>
+<th style="text-align: right;">Logistic OR（每+10分钟）</th>
+<th style="text-align: right;">Linear系数</th>
+<th style="text-align: right;">每+10分钟传递的分钟数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2015</td>
+<td style="text-align: right;">4,956,280</td>
+<td style="text-align: right;">1.525</td>
+<td style="text-align: right;">0.5212</td>
+<td style="text-align: right;">5.21</td>
+</tr>
+<tr>
+<td>2016</td>
+<td style="text-align: right;">4,824,439</td>
+<td style="text-align: right;">1.500</td>
+<td style="text-align: right;">0.5226</td>
+<td style="text-align: right;">5.23</td>
+</tr>
+<tr>
+<td>2017</td>
+<td style="text-align: right;">4,862,737</td>
+<td style="text-align: right;">1.491</td>
+<td style="text-align: right;">0.5297</td>
+<td style="text-align: right;">5.30</td>
+</tr>
+<tr>
+<td>2018</td>
+<td style="text-align: right;">6,201,714</td>
+<td style="text-align: right;">1.469</td>
+<td style="text-align: right;">0.5274</td>
+<td style="text-align: right;">5.27</td>
+</tr>
+<tr>
+<td>2019</td>
+<td style="text-align: right;">6,380,395</td>
+<td style="text-align: right;">1.439</td>
+<td style="text-align: right;">0.5190</td>
+<td style="text-align: right;">5.19</td>
+</tr>
+<tr>
+<td>2020</td>
+<td style="text-align: right;">3,575,671</td>
+<td style="text-align: right;">1.453</td>
+<td style="text-align: right;">0.4221</td>
+<td style="text-align: right;">4.22</td>
+</tr>
+<tr>
+<td>2021</td>
+<td style="text-align: right;">4,943,061</td>
+<td style="text-align: right;">1.414</td>
+<td style="text-align: right;">0.4922</td>
+<td style="text-align: right;">4.92</td>
+</tr>
+<tr>
+<td>2022</td>
+<td style="text-align: right;">5,620,042</td>
+<td style="text-align: right;">1.416</td>
+<td style="text-align: right;">0.5285</td>
+<td style="text-align: right;">5.28</td>
+</tr>
+<tr>
+<td>2023</td>
+<td style="text-align: right;">5,883,115</td>
+<td style="text-align: right;">1.405</td>
+<td style="text-align: right;">0.5180</td>
+<td style="text-align: right;">5.18</td>
+</tr>
+<tr>
+<td>2024</td>
+<td style="text-align: right;">6,021,015</td>
+<td style="text-align: right;">1.403</td>
+<td style="text-align: right;">0.5266</td>
+<td style="text-align: right;">5.27</td>
+</tr>
+</tbody>
+</table>
+<p>总览：</p>
+<ul>
+<li>总 pairs：<strong>53,268,469</strong></li>
+<li>平均 OR（每+10分钟）：<strong>1.451</strong></li>
+<li>平均分钟传递（每+10分钟）：<strong>5.11 分钟</strong></li>
+</ul>
+<h3 id="过站异质性最强信号">6.2 2024 过站异质性（最强信号）</h3>
+<table>
+<thead>
+<tr>
+<th>Turnaround bin</th>
+<th style="text-align: right;">OR（每+10分钟）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20-44</td>
+<td style="text-align: right;">2.859</td>
+</tr>
+<tr>
+<td>45-89</td>
+<td style="text-align: right;">2.132</td>
+</tr>
+<tr>
+<td>90-179</td>
+<td style="text-align: right;">1.315</td>
+</tr>
+<tr>
+<td>180-600</td>
+<td style="text-align: right;">1.059</td>
+</tr>
+</tbody>
+</table>
+<p>解释：</p>
+<ul>
+<li>过站越短，延误传播越强。</li>
+</ul>
+<hr />
+<h2 id="图怎么用汇报推荐顺序">7. 图怎么用（汇报推荐顺序）</h2>
+<p>图目录：</p>
+<ul>
+<li><code>/Users/liyuang/Desktop/stat605/results/report_figures</code></li>
+</ul>
+<p>推荐主线：</p>
+<ol type="1">
+<li><code>fig04_pipeline_parallel_flow.png</code>（先讲流程）</li>
+<li><code>fig08_pairs_by_year_2015_2024.png</code>（讲规模）</li>
+<li><code>fig06_yearly_or10_trend_2015_2024.png</code>（讲主结果）</li>
+<li><code>fig01_delay_rate_by_prev_delay_bin_2024.png</code>（讲非参数趋势）</li>
+<li><code>fig07_yearly_linear_minutes_trend_2015_2024.png</code>（讲分钟解释）</li>
+<li><code>fig03_carryover_by_turnaround_bin_2024.png</code>（讲异质性主图）</li>
+<li><code>fig02_carryover_by_airline_2024.png</code>（补充异质性）</li>
+</ol>
+<hr />
+<h2 id="页-ppt-模板队友直接照抄">8. 7页 PPT 模板（队友直接照抄）</h2>
+<h3 id="slide-1研究问题-意义">Slide 1：研究问题 + 意义</h3>
+<ul>
+<li>同机前序晚到是否传播到下一段？</li>
+<li>为什么对运营和旅客很重要？</li>
+</ul>
+<h3 id="slide-2数据与规模">Slide 2：数据与规模</h3>
+<ul>
+<li>2015-2024，120 月文件</li>
+<li>53.27M pairs</li>
+<li>放 <code>fig08</code></li>
+</ul>
+<h3 id="slide-3方法与并行流程">Slide 3：方法与并行流程</h3>
+<ul>
+<li>清洗、分区、配对逻辑</li>
+<li>放 <code>fig04</code></li>
+</ul>
+<h3 id="slide-4主-logistic-结果">Slide 4：主 logistic 结果</h3>
+<ul>
+<li>OR per 10 min</li>
+<li>放 <code>fig06</code> + <code>fig01</code></li>
+</ul>
+<h3 id="slide-5linear-分钟解释">Slide 5：linear 分钟解释</h3>
+<ul>
+<li>“10 分钟前序晚到 -&gt; 平均多晚出发多少分钟”</li>
+<li>放 <code>fig07</code></li>
+</ul>
+<h3 id="slide-6异质性">Slide 6：异质性</h3>
+<ul>
+<li>turnaround（主）</li>
+<li>airline（辅）</li>
+<li>放 <code>fig03</code> + <code>fig02</code></li>
+</ul>
+<h3 id="slide-7局限与结论">Slide 7：局限与结论</h3>
+<ul>
+<li>association 不是 strict causality</li>
+<li>天气/ATC/机械未完全控制</li>
+<li>运营建议：重点保护短过站 buffer</li>
+</ul>
+<hr />
+<h2 id="讲解时必须注意避免翻车">9. 讲解时必须注意（避免翻车）</h2>
+<ul>
+<li>不要说 “causal effect”，要说 “associated with / 相关”。</li>
+<li>不要把航司排序讲成“绝对优劣”，要加样本量背景。</li>
+<li>不要把 2024 异质性讲成“10 年都验证过”。</li>
+<li>不要把线性模型 R² 当主卖点，主卖点是 logistic 风险传播。</li>
+</ul>
+<hr />
+<h2 id="你可以直接念的收尾30-40秒">10.
+你可以直接念的收尾（30-40秒）</h2>
+<p>“我们基于 2015 到 2024 年 BTS 数据，构建了超过 5300
+万个同机连续航段配对。结果显示，前序航班晚到与下一段严重晚点风险稳定正相关：平均每增加
+10 分钟前序晚到，下一段严重晚点赔率约提高到 1.45
+倍。在线性解释上，这相当于平均多传递约 5
+分钟出发延误。异质性结果表明短过站场景传播最强，因此在运行管理上，保护短过站
+buffer 是最直接可操作的优化方向。”</p>
+<hr />
+<h2 id="文档与成品文件路径直接发给队友">11.
+文档与成品文件路径（直接发给队友）</h2>
+<ul>
+<li>本文 Markdown：
+<ul>
+<li><code>/Users/liyuang/Desktop/stat605/results/report_figures/team_slides_playbook_zh.md</code></li>
+</ul></li>
+<li>本文 HTML：
+<ul>
+<li><code>/Users/liyuang/Desktop/stat605/results/report_figures/team_slides_playbook_zh.html</code></li>
+</ul></li>
+<li>本文 PDF：
+<ul>
+<li><code>/Users/liyuang/Desktop/stat605/results/report_figures/team_slides_playbook_zh.pdf</code></li>
+</ul></li>
+</ul>
+</body>
+</html>

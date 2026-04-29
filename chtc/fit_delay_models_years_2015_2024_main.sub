@@ -1,0 +1,20 @@
+universe = vanilla
+initialdir = /home/yli2827/stat605_delay_pipeline
+executable = chtc/fit_delay_models_one_year.sh
+arguments = processed/pairs_2015_2024 results_2015_2024_yearly $(YEAR)
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+preserve_relative_paths = True
+transfer_input_files = scripts/fit_delay_models.py,scripts/pipeline_utils.py,python_deps,processed/pairs_2015_2024
+transfer_output_files = results_2015_2024_yearly/$(YEAR)
+
+output = logs/chtc_fit_delay_$(YEAR)_$(cluster)_$(process).out
+error = logs/chtc_fit_delay_$(YEAR)_$(cluster)_$(process).err
+log = logs/chtc_fit_delay_yearly_$(cluster).log
+
+request_cpus = 1
+request_memory = 24GB
+request_disk = 25GB
+
+queue YEAR in 2015,2016,2017,2018,2019,2020,2021,2022,2023,2024

@@ -1,0 +1,22 @@
+universe = vanilla
+initialdir = /home/yli2827/stat605_delay_pipeline
+executable = chtc/build_pairs_one_partition.sh
+arguments = $(partition_path) processed/pairs
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+preserve_relative_paths = True
+transfer_input_files = scripts/build_pairs_one_partition.py,scripts/pipeline_utils.py,python_deps,processed/partitions/part_000.csv
+transfer_output_files = processed/pairs
+
+output = logs/chtc_pairs_$(cluster)_$(process).out
+error = logs/chtc_pairs_$(cluster)_$(process).err
+log = logs/chtc_pairs_$(cluster).log
+
+request_cpus = 1
+request_memory = 6GB
+request_disk = 12GB
+
+queue partition_path from (
+processed/partitions/part_000.csv
+)

@@ -1,0 +1,50 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Logs and temp
+logs/
+tmp/
+
+# Large/raw data artifacts
+data/
+dataset/
+processed/
+stat605_2015_2024_raw.tar
+*.zip
+*.tar
+*.gz
+
+# Keep only presentation-ready outputs under results/report_figures
+results/*
+!results/report_figures/
+!results/report_figures/**
+
+# Keep only code for this project
+# (other coursework folders/files are intentionally excluded by not adding them)
+
+# Unrelated coursework/material folders at this workspace root
+2/
+2 2/
+DSCP/
+hshi248/
+hshi248_hw3/
+hw4_solution/
+hw4a/
+yli2827_hw3/
+yli2827_hw4/
+yli2827_hw4a/
+
+# Misc local docs/materials not part of this repo
+Page 1.docx
+git.pdf
+hw4.pdf
+linuxCommands.pdf
+linuxScripting.pdf
+regularExpressions.pdf

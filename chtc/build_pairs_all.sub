@@ -1,0 +1,121 @@
+universe = vanilla
+initialdir = /Users/liyuang/Desktop/stat605
+executable = chtc/build_pairs_one_partition.sh
+arguments = $(partition_path) processed/pairs
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+preserve_relative_paths = True
+transfer_input_files = scripts/build_pairs_one_partition.py,scripts/pipeline_utils.py,python_deps,$(partition_path)
+transfer_output_files = processed/pairs
+
+output = logs/chtc_pairs_all_$(cluster)_$(process).out
+error = logs/chtc_pairs_all_$(cluster)_$(process).err
+log = logs/chtc_pairs_all_$(cluster).log
+
+request_cpus = 1
+request_memory = 6GB
+request_disk = 12GB
+
+queue partition_path from (
+processed/partitions/part_000.csv
+processed/partitions/part_001.csv
+processed/partitions/part_002.csv
+processed/partitions/part_003.csv
+processed/partitions/part_004.csv
+processed/partitions/part_005.csv
+processed/partitions/part_006.csv
+processed/partitions/part_007.csv
+processed/partitions/part_008.csv
+processed/partitions/part_009.csv
+processed/partitions/part_010.csv
+processed/partitions/part_011.csv
+processed/partitions/part_012.csv
+processed/partitions/part_013.csv
+processed/partitions/part_014.csv
+processed/partitions/part_015.csv
+processed/partitions/part_016.csv
+processed/partitions/part_017.csv
+processed/partitions/part_018.csv
+processed/partitions/part_019.csv
+processed/partitions/part_020.csv
+processed/partitions/part_021.csv
+processed/partitions/part_022.csv
+processed/partitions/part_023.csv
+processed/partitions/part_024.csv
+processed/partitions/part_025.csv
+processed/partitions/part_026.csv
+processed/partitions/part_027.csv
+processed/partitions/part_028.csv
+processed/partitions/part_029.csv
+processed/partitions/part_030.csv
+processed/partitions/part_031.csv
+processed/partitions/part_032.csv
+processed/partitions/part_033.csv
+processed/partitions/part_034.csv
+processed/partitions/part_035.csv
+processed/partitions/part_036.csv
+processed/partitions/part_037.csv
+processed/partitions/part_038.csv
+processed/partitions/part_039.csv
+processed/partitions/part_040.csv
+processed/partitions/part_041.csv
+processed/partitions/part_042.csv
+processed/partitions/part_043.csv
+processed/partitions/part_044.csv
+processed/partitions/part_045.csv
+processed/partitions/part_046.csv
+processed/partitions/part_047.csv
+processed/partitions/part_048.csv
+processed/partitions/part_049.csv
+processed/partitions/part_050.csv
+processed/partitions/part_051.csv
+processed/partitions/part_052.csv
+processed/partitions/part_053.csv
+processed/partitions/part_054.csv
+processed/partitions/part_055.csv
+processed/partitions/part_056.csv
+processed/partitions/part_057.csv
+processed/partitions/part_058.csv
+processed/partitions/part_059.csv
+processed/partitions/part_060.csv
+processed/partitions/part_061.csv
+processed/partitions/part_062.csv
+processed/partitions/part_063.csv
+processed/partitions/part_064.csv
+processed/partitions/part_065.csv
+processed/partitions/part_066.csv
+processed/partitions/part_067.csv
+processed/partitions/part_068.csv
+processed/partitions/part_069.csv
+processed/partitions/part_070.csv
+processed/partitions/part_071.csv
+processed/partitions/part_072.csv
+processed/partitions/part_073.csv
+processed/partitions/part_074.csv
+processed/partitions/part_075.csv
+processed/partitions/part_076.csv
+processed/partitions/part_077.csv
+processed/partitions/part_078.csv
+processed/partitions/part_079.csv
+processed/partitions/part_080.csv
+processed/partitions/part_081.csv
+processed/partitions/part_082.csv
+processed/partitions/part_083.csv
+processed/partitions/part_084.csv
+processed/partitions/part_085.csv
+processed/partitions/part_086.csv
+processed/partitions/part_087.csv
+processed/partitions/part_088.csv
+processed/partitions/part_089.csv
+processed/partitions/part_090.csv
+processed/partitions/part_091.csv
+processed/partitions/part_092.csv
+processed/partitions/part_093.csv
+processed/partitions/part_094.csv
+processed/partitions/part_095.csv
+processed/partitions/part_096.csv
+processed/partitions/part_097.csv
+processed/partitions/part_098.csv
+processed/partitions/part_099.csv
+)

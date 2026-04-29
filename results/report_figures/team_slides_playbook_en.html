@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>team_slides_playbook_en</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="team-slides-playbook-full-sop-version">Team Slides Playbook
+(Full SOP Version)</h1>
+<h2
+id="aircraft-delay-propagation-in-u.s.-domestic-flights-2015-2024">Aircraft
+Delay Propagation in U.S. Domestic Flights (2015-2024)</h2>
+<p>This is the <strong>full handoff document</strong> for teammates. It
+is written so someone who did not do the engineering work can still:</p>
+<ol type="1">
+<li>understand what was built,</li>
+<li>explain methods and results correctly,</li>
+<li>prepare final slides without guessing.</li>
+</ol>
+<hr />
+<h2 id="executive-summary-read-this-first">0) Executive Summary (Read
+This First)</h2>
+<p>We studied whether delay carries over from one flight to the next
+when both flights are operated by the <strong>same aircraft</strong>
+(<code>TAIL_NUM</code>).</p>
+<p>Main findings:</p>
+<ul>
+<li>Across 2015-2024, delay propagation is consistently positive.</li>
+<li>In logistic models, +10 minutes of previous arrival delay is
+associated with about <strong>1.45x</strong> odds of severe next-leg
+departure delay (&gt;15 min), on average.</li>
+<li>In linear models, +10 minutes previous arrival delay is associated
+with about <strong>+5.11 minutes</strong> of next-leg departure delay,
+on average.</li>
+<li>Propagation is much stronger when scheduled turnaround is short
+(especially 20-44 minutes).</li>
+</ul>
+<hr />
+<h2 id="project-context-and-scope">1) Project Context and Scope</h2>
+<h3 id="research-question">1.1 Research question</h3>
+<p>When a flight arrives late, how much of that delay carries over to
+later flights of the same aircraft, and how fast does it decay?</p>
+<h3 id="what-is-in-the-main-story">1.2 What is in the main story</h3>
+<ul>
+<li>Primary: logistic carry-over model (risk framing)</li>
+<li>Secondary: linear carry-over model (minutes framing)</li>
+<li>Heterogeneity: airline + turnaround bin</li>
+</ul>
+<h3 id="what-is-not-the-main-story">1.3 What is not the main story</h3>
+<ul>
+<li>Strict causal claims</li>
+<li>Full weather/ATC/mechanical causal decomposition</li>
+<li>Full decay-model deep dive (can be appendix)</li>
+</ul>
+<hr />
+<h2 id="data-source-size-and-time-range">2) Data Source, Size, and Time
+Range</h2>
+<h3 id="source">2.1 Source</h3>
+<ul>
+<li>U.S. Bureau of Transportation Statistics (BTS), monthly On-Time
+Performance files.</li>
+</ul>
+<h3 id="time-range-used-in-production-results">2.2 Time range used in
+production results</h3>
+<ul>
+<li>2015-01 through 2024-12.</li>
+<li>10 years = 120 monthly files.</li>
+</ul>
+<h3 id="size-summary-from-this-run">2.3 Size summary from this run</h3>
+<ul>
+<li>Raw archive in project workspace: about <strong>3.19 GB</strong>
+(<code>stat605_2015_2024_raw.tar</code>)</li>
+<li>Cleaned rows assigned to global partitions: about
+<strong>61,690,070</strong></li>
+<li>Final modeling pairs used: <strong>53,268,469</strong></li>
+<li>2024 modeling pairs: <strong>6,021,015</strong></li>
+</ul>
+<hr />
+<h2 id="folder-map-so-teammates-know-where-everything-is">3) Folder Map
+(So Teammates Know Where Everything Is)</h2>
+<h3 id="code-and-submit-files">3.1 Code and submit files</h3>
+<ul>
+<li>Scripts: <code>/Users/liyuang/Desktop/stat605/scripts</code></li>
+<li>CHTC submit/helpers:
+<code>/Users/liyuang/Desktop/stat605/chtc</code></li>
+</ul>
+<h3 id="pulled-results">3.2 Pulled results</h3>
+<ul>
+<li>All yearly model outputs:
+<ul>
+<li><code>/Users/liyuang/Desktop/stat605/results/chtc_pull/results_2015_2024_yearly</code></li>
+</ul></li>
+<li>2024 heterogeneity outputs:
+<ul>
+<li><code>/Users/liyuang/Desktop/stat605/results/chtc_pull/results_2024_hetero/2024</code></li>
+</ul></li>
+</ul>
+<h3 id="final-figure-pack-for-slides">3.3 Final figure pack for
+slides</h3>
+<ul>
+<li><code>/Users/liyuang/Desktop/stat605/results/report_figures</code></li>
+</ul>
+<p>Key files there:</p>
+<ul>
+<li><code>fig01_delay_rate_by_prev_delay_bin_2024.png</code></li>
+<li><code>fig02_carryover_by_airline_2024.png</code></li>
+<li><code>fig03_carryover_by_turnaround_bin_2024.png</code></li>
+<li><code>fig04_pipeline_parallel_flow.png</code></li>
+<li><code>fig05_prev_arr_delay_vs_current_dep_delay_2024.png</code></li>
+<li><code>fig06_yearly_or10_trend_2015_2024.png</code></li>
+<li><code>fig07_yearly_linear_minutes_trend_2015_2024.png</code></li>
+<li><code>fig08_pairs_by_year_2015_2024.png</code></li>
+<li><code>fig09_airline_top_bottom_2024.png</code></li>
+</ul>
+<hr />
+<h2 id="variables-and-feature-definitions">4) Variables and Feature
+Definitions</h2>
+<h3 id="core-fields-kept-from-bts">4.1 Core fields kept from BTS</h3>
+<ul>
+<li><code>TAIL_NUM</code></li>
+<li><code>FL_DATE</code></li>
+<li><code>OP_UNIQUE_CARRIER</code></li>
+<li><code>ORIGIN</code>, <code>DEST</code></li>
+<li><code>CRS_DEP_TIME</code>, <code>CRS_ARR_TIME</code></li>
+<li><code>DEP_DELAY</code>, <code>ARR_DELAY</code></li>
+<li><code>DISTANCE</code></li>
+<li><code>CANCELLED</code>, <code>DIVERTED</code></li>
+</ul>
+<h3 id="additional-fields-if-available">4.2 Additional fields (if
+available)</h3>
+<ul>
+<li><code>MONTH</code></li>
+<li><code>DAY_OF_WEEK</code></li>
+<li><code>CRS_ELAPSED_TIME</code></li>
+<li><code>DEP_TIME</code></li>
+<li><code>ARR_TIME</code></li>
+</ul>
+<h3 id="derived-fields-used-in-modeling">4.3 Derived fields used in
+modeling</h3>
+<ul>
+<li><code>sched_dep_hour</code></li>
+<li><code>sched_arr_hour</code></li>
+<li><code>sched_dep_timestamp</code></li>
+<li><code>sched_arr_timestamp</code> (overnight-corrected)</li>
+<li><code>route = ORIGIN + "-" + DEST</code></li>
+<li><code>scheduled_turnaround_minutes</code></li>
+<li><code>same_airport_connection = 1(prev_DEST == current_ORIGIN)</code></li>
+<li><code>current_dep_delayed_15 = 1(current_DEP_DELAY &gt; 15)</code></li>
+<li><code>prev_arr_delayed_15 = 1(prev_ARR_DELAY &gt; 15)</code></li>
+<li><code>turnaround_bin</code> in:
+<ul>
+<li><code>20-44</code></li>
+<li><code>45-89</code></li>
+<li><code>90-179</code></li>
+<li><code>180-600</code></li>
+</ul></li>
+<li><code>dep_period</code> in:
+<ul>
+<li><code>overnight</code></li>
+<li><code>morning</code></li>
+<li><code>afternoon</code></li>
+<li><code>evening</code></li>
+</ul></li>
+</ul>
+<hr />
+<h2 id="cleaning-and-pairing-logic-what-exactly-was-done">5) Cleaning
+and Pairing Logic (What Exactly Was Done)</h2>
+<h3 id="monthly-cleaning-rules">5.1 Monthly cleaning rules</h3>
+<ul>
+<li>Keep only required columns.</li>
+<li>Drop missing <code>TAIL_NUM</code>, <code>FL_DATE</code>,
+<code>CRS_DEP_TIME</code>, <code>CRS_ARR_TIME</code>.</li>
+<li>Remove cancelled and diverted flights.</li>
+<li>Keep negative delays (early flights).</li>
+<li>Build scheduled timestamps from date + CRS time.</li>
+<li>If scheduled arrival clock time appears earlier than scheduled
+departure, shift scheduled arrival by +1 day (overnight
+correction).</li>
+</ul>
+<h3 id="pair-construction-rules">5.2 Pair construction rules</h3>
+<ul>
+<li>Sort within each <code>TAIL_NUM</code> by scheduled departure
+timestamp.</li>
+<li>Pair each flight with the immediately previous flight of the same
+aircraft.</li>
+<li>Keep only same-airport transitions:
+<ul>
+<li><code>prev_DEST == current_ORIGIN</code></li>
+</ul></li>
+<li>Keep only realistic scheduled turnaround:
+<ul>
+<li><code>20 &lt;= scheduled_turnaround_minutes &lt;= 600</code></li>
+</ul></li>
+</ul>
+<p>This gives the main propagation unit:</p>
+<ul>
+<li>previous-leg delay -&gt; current-leg delay/risk.</li>
+</ul>
+<hr />
+<h2 id="model-specifications-how-to-explain-in-slides">6) Model
+Specifications (How to Explain in Slides)</h2>
+<h3 id="primary-logistic-model">6.1 Primary logistic model</h3>
+<p>Outcome:</p>
+<ul>
+<li><code>current_dep_delayed_15</code></li>
+</ul>
+<p>Main regressor:</p>
+<ul>
+<li><code>prev_ARR_DELAY</code></li>
+</ul>
+<p>Controls:</p>
+<ul>
+<li><code>scheduled_turnaround_minutes</code></li>
+<li><code>current_sched_dep_hour</code></li>
+<li><code>current_DISTANCE</code></li>
+<li><code>C(OP_UNIQUE_CARRIER)</code></li>
+<li><code>C(current_month)</code></li>
+<li><code>C(current_day_of_week)</code></li>
+<li><code>C(dep_period)</code></li>
+<li><code>C(current_year)</code> when multi-year fit</li>
+</ul>
+<p>Interpretation:</p>
+<ul>
+<li>odds ratio for severe departure delay per +10 min previous arrival
+delay.</li>
+</ul>
+<h3 id="secondary-linear-model">6.2 Secondary linear model</h3>
+<p>Outcome:</p>
+<ul>
+<li><code>current_DEP_DELAY</code></li>
+</ul>
+<p>Same controls as above.</p>
+<p>Interpretation:</p>
+<ul>
+<li>minutes of expected next-leg departure delay carried from previous
+arrival delay.</li>
+</ul>
+<h3 id="heterogeneity-models-2024">6.3 Heterogeneity models (2024)</h3>
+<ul>
+<li>Airline interaction:
+<ul>
+<li><code>prev_ARR_DELAY * C(OP_UNIQUE_CARRIER)</code></li>
+</ul></li>
+<li>Turnaround interaction:
+<ul>
+<li><code>prev_ARR_DELAY * C(turnaround_bin)</code></li>
+</ul></li>
+</ul>
+<hr />
+<h2 id="chtc-runbook-step-by-step">7) CHTC Runbook (Step-by-Step)</h2>
+<p>This section is intentionally detailed so a teammate can replicate
+the workflow.</p>
+<h3 id="login">7.1 Login</h3>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> yli2827@ap2001.chtc.wisc.edu</span></code></pre></div>
+<p>Then complete Duo push.</p>
+<h3 id="go-to-project-directory">7.2 Go to project directory</h3>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/stat605_delay_pipeline</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div>
+<h3 id="submit-yearly-main-models-2015-2024">7.3 Submit yearly main
+models (2015-2024)</h3>
+<p>Submit file used:</p>
+<ul>
+<li><code>chtc/fit_delay_models_years_2015_2024_main.sub</code></li>
+</ul>
+<p>Command:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">condor_submit</span> chtc/fit_delay_models_years_2015_2024_main.sub</span></code></pre></div>
+<p>This submit template launches:</p>
+<ul>
+<li>10 jobs (one per year, 2015 to 2024)</li>
+<li>script: <code>chtc/fit_delay_models_one_year.sh</code></li>
+<li>model mode: main-model-safe mode
+(<code>--skip-heterogeneity</code>)</li>
+</ul>
+<h3 id="monitor-jobs">7.4 Monitor jobs</h3>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">condor_q</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">condor_q</span> <span class="at">-hold</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">condor_q</span> <span class="op">&lt;</span>cluster_id<span class="op">&gt;</span> -nobatch</span></code></pre></div>
+<p>If held:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">condor_q</span> <span class="at">-hold</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">condor_q</span> <span class="op">&lt;</span>cluster_id<span class="op">&gt;</span>.<span class="op">&lt;</span>proc_id<span class="op">&gt;</span> -better-analyze</span></code></pre></div>
+<p>Common hold reason seen in this project:</p>
+<ul>
+<li><code>HoldReasonCode 34 / SubCode 102</code></li>
+<li>means cgroup memory limit exceeded (OOM)</li>
+</ul>
+<h3 id="retry-heavy-years-with-more-memory">7.5 Retry heavy years with
+more memory</h3>
+<p>For heavy years (we observed 2018, 2019, 2024), use a retry submit
+with larger memory.</p>
+<p>Submit file used:</p>
+<ul>
+<li><code>chtc/fit_delay_models_retry_2018_2019_2024.sub</code></li>
+</ul>
+<p>Command:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">condor_submit</span> chtc/fit_delay_models_retry_2018_2019_2024.sub</span></code></pre></div>
+<h3 id="run-2024-heterogeneity-model">7.6 Run 2024 heterogeneity
+model</h3>
+<p>Submit file used:</p>
+<ul>
+<li><code>chtc/fit_delay_models_2024_hetero.sub</code></li>
+</ul>
+<p>Command:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">condor_submit</span> chtc/fit_delay_models_2024_hetero.sub</span></code></pre></div>
+<p>This runs:</p>
+<ul>
+<li>script: <code>chtc/fit_delay_models_one_year_hetero.sh</code></li>
+<li>year: 2024</li>
+<li>no <code>--skip-heterogeneity</code></li>
+<li>memory in run: 48GB</li>
+</ul>
+<h3 id="pull-results-back-to-local-machine">7.7 Pull results back to
+local machine</h3>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-av</span> yli2827@ap2001.chtc.wisc.edu:~/stat605_delay_pipeline/results_2015_2024_yearly/ <span class="dt">\</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  /Users/liyuang/Desktop/stat605/results/chtc_pull/results_2015_2024_yearly/</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-av</span> yli2827@ap2001.chtc.wisc.edu:~/stat605_delay_pipeline/results_2024_hetero/2024/ <span class="dt">\</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  /Users/liyuang/Desktop/stat605/results/chtc_pull/results_2024_hetero/2024/</span></code></pre></div>
+<hr />
+<h2 id="job-splitting-logic-why-we-split-this-way">8) Job Splitting
+Logic (Why We Split This Way)</h2>
+<h3 id="stage-level-split">8.1 Stage-level split</h3>
+<ul>
+<li>Cleaning: monthly split (naturally parallel, low coupling)</li>
+<li>Pair building: partition split by <code>hash(TAIL_NUM) % 100</code>
+(keeps aircraft integrity)</li>
+<li>Modeling: initially attempted pooled windows; then moved to yearly
+jobs for memory stability</li>
+</ul>
+<h3 id="why-yearly-modeling-was-the-practical-winner">8.2 Why yearly
+modeling was the practical winner</h3>
+<ul>
+<li>Full pooled jobs had higher risk of OOM and no available high-memory
+slots.</li>
+<li>Yearly jobs were easier to schedule and recover.</li>
+<li>Only heavy years required memory bump reruns.</li>
+</ul>
+<h3 id="actual-practical-pattern-used">8.3 Actual practical pattern
+used</h3>
+<ul>
+<li>Main results:
+<ul>
+<li>10 yearly jobs</li>
+</ul></li>
+<li>Retry:
+<ul>
+<li>3 heavy-year jobs with higher memory</li>
+</ul></li>
+<li>Heterogeneity:
+<ul>
+<li>1 dedicated 2024 job</li>
+</ul></li>
+</ul>
+<hr />
+<h2 id="what-output-files-mean-so-people-dont-confuse-them">9) What
+Output Files Mean (So People Don’t Confuse Them)</h2>
+<p>Inside each year folder (for example
+<code>results_2015_2024_yearly/2024</code>):</p>
+<ul>
+<li><code>main_result_table.csv</code>
+<ul>
+<li>one-row summary for slide-level reporting</li>
+</ul></li>
+<li><code>secondary_linear_result_table.csv</code>
+<ul>
+<li>compact linear minutes interpretation</li>
+</ul></li>
+<li><code>model_coefficients.csv</code>
+<ul>
+<li>coefficient-level details</li>
+</ul></li>
+<li><code>model_metrics.csv</code>
+<ul>
+<li>AIC/deviance/ROC-AUC style metrics</li>
+</ul></li>
+<li><code>logistic_delay_model_summary.txt</code>
+<ul>
+<li>full regression summary text</li>
+</ul></li>
+<li><code>linear_delay_model_summary.txt</code>
+<ul>
+<li>full OLS summary text</li>
+</ul></li>
+<li><code>figures/*.png</code>
+<ul>
+<li>model figures for communication</li>
+</ul></li>
+</ul>
+<p>In 2024 heterogeneity folder:</p>
+<ul>
+<li><code>airline_carryover_summary.csv</code></li>
+<li><code>turnaround_carryover_summary.csv</code></li>
+<li>heterogeneity figure PNG files</li>
+</ul>
+<hr />
+<h2 id="results-table-for-slides-copy-paste-ready">10) Results Table for
+Slides (Copy-Paste Ready)</h2>
+<h3 id="yearly-main-effects">10.1 Yearly main effects</h3>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr>
+<th>Year</th>
+<th style="text-align: right;">Pairs</th>
+<th style="text-align: right;">Logistic OR per +10 min</th>
+<th style="text-align: right;">Linear coefficient</th>
+<th style="text-align: right;">Minutes carried per +10 min</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2015</td>
+<td style="text-align: right;">4,956,280</td>
+<td style="text-align: right;">1.525</td>
+<td style="text-align: right;">0.5212</td>
+<td style="text-align: right;">5.21</td>
+</tr>
+<tr>
+<td>2016</td>
+<td style="text-align: right;">4,824,439</td>
+<td style="text-align: right;">1.500</td>
+<td style="text-align: right;">0.5226</td>
+<td style="text-align: right;">5.23</td>
+</tr>
+<tr>
+<td>2017</td>
+<td style="text-align: right;">4,862,737</td>
+<td style="text-align: right;">1.491</td>
+<td style="text-align: right;">0.5297</td>
+<td style="text-align: right;">5.30</td>
+</tr>
+<tr>
+<td>2018</td>
+<td style="text-align: right;">6,201,714</td>
+<td style="text-align: right;">1.469</td>
+<td style="text-align: right;">0.5274</td>
+<td style="text-align: right;">5.27</td>
+</tr>
+<tr>
+<td>2019</td>
+<td style="text-align: right;">6,380,395</td>
+<td style="text-align: right;">1.439</td>
+<td style="text-align: right;">0.5190</td>
+<td style="text-align: right;">5.19</td>
+</tr>
+<tr>
+<td>2020</td>
+<td style="text-align: right;">3,575,671</td>
+<td style="text-align: right;">1.453</td>
+<td style="text-align: right;">0.4221</td>
+<td style="text-align: right;">4.22</td>
+</tr>
+<tr>
+<td>2021</td>
+<td style="text-align: right;">4,943,061</td>
+<td style="text-align: right;">1.414</td>
+<td style="text-align: right;">0.4922</td>
+<td style="text-align: right;">4.92</td>
+</tr>
+<tr>
+<td>2022</td>
+<td style="text-align: right;">5,620,042</td>
+<td style="text-align: right;">1.416</td>
+<td style="text-align: right;">0.5285</td>
+<td style="text-align: right;">5.28</td>
+</tr>
+<tr>
+<td>2023</td>
+<td style="text-align: right;">5,883,115</td>
+<td style="text-align: right;">1.405</td>
+<td style="text-align: right;">0.5180</td>
+<td style="text-align: right;">5.18</td>
+</tr>
+<tr>
+<td>2024</td>
+<td style="text-align: right;">6,021,015</td>
+<td style="text-align: right;">1.403</td>
+<td style="text-align: right;">0.5266</td>
+<td style="text-align: right;">5.27</td>
+</tr>
+</tbody>
+</table>
+<h3 id="aggregate-summary-numbers">10.2 Aggregate summary numbers</h3>
+<ul>
+<li>Total pairs: <strong>53,268,469</strong></li>
+<li>Average OR per +10 min: <strong>1.451</strong></li>
+<li>Average minutes carried per +10 min: <strong>5.11</strong></li>
+</ul>
+<h3 id="turnaround-heterogeneity">10.3 2024 turnaround
+heterogeneity</h3>
+<table>
+<thead>
+<tr>
+<th>Turnaround bin</th>
+<th style="text-align: right;">OR per +10 min</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20-44</td>
+<td style="text-align: right;">2.859</td>
+</tr>
+<tr>
+<td>45-89</td>
+<td style="text-align: right;">2.132</td>
+</tr>
+<tr>
+<td>90-179</td>
+<td style="text-align: right;">1.315</td>
+</tr>
+<tr>
+<td>180-600</td>
+<td style="text-align: right;">1.059</td>
+</tr>
+</tbody>
+</table>
+<p>Interpretation:</p>
+<ul>
+<li>The shorter the turnaround buffer, the stronger the delay
+carry-over.</li>
+</ul>
+<hr />
+<h2 id="recommended-slide-deck-structure-7-slides">11) Recommended Slide
+Deck Structure (7 Slides)</h2>
+<h3 id="slide-1-question-why-it-matters">Slide 1: Question + Why It
+Matters</h3>
+<p>Message:</p>
+<ul>
+<li>Same-aircraft delay propagation affects reliability and passenger
+experience.</li>
+</ul>
+<h3 id="slide-2-data-scale">Slide 2: Data + Scale</h3>
+<p>Include:</p>
+<ul>
+<li>2015-2024, 120 monthly files</li>
+<li>53.27M modeling pairs</li>
+<li><code>fig08_pairs_by_year_2015_2024.png</code></li>
+</ul>
+<h3 id="slide-3-method-and-pipeline">Slide 3: Method and Pipeline</h3>
+<p>Include:</p>
+<ul>
+<li>Pair definition and filtering logic</li>
+<li><code>fig04_pipeline_parallel_flow.png</code></li>
+</ul>
+<h3 id="slide-4-main-logistic-result">Slide 4: Main Logistic Result</h3>
+<p>Include:</p>
+<ul>
+<li><code>fig06_yearly_or10_trend_2015_2024.png</code></li>
+<li><code>fig01_delay_rate_by_prev_delay_bin_2024.png</code></li>
+</ul>
+<h3 id="slide-5-minutes-interpretation">Slide 5: Minutes
+Interpretation</h3>
+<p>Include:</p>
+<ul>
+<li><code>fig07_yearly_linear_minutes_trend_2015_2024.png</code></li>
+<li>optionally
+<code>fig05_prev_arr_delay_vs_current_dep_delay_2024.png</code></li>
+</ul>
+<h3 id="slide-6-heterogeneity">Slide 6: Heterogeneity</h3>
+<p>Include:</p>
+<ul>
+<li><code>fig03_carryover_by_turnaround_bin_2024.png</code> (primary
+heterogeneity)</li>
+<li><code>fig02_carryover_by_airline_2024.png</code> (secondary
+heterogeneity)</li>
+</ul>
+<h3 id="slide-7-limitations-operational-takeaway">Slide 7: Limitations +
+Operational Takeaway</h3>
+<p>Say explicitly:</p>
+<ul>
+<li>Association, not strict causality.</li>
+<li>Weather/ATC/mechanical confounders remain.</li>
+<li>Operational action point: protect short-turn buffers.</li>
+</ul>
+<hr />
+<h2 id="figure-reference-with-inline-images">12) Figure Reference (With
+Inline Images)</h2>
+<h3 id="pipeline-and-scale">Pipeline and scale</h3>
+<p><img src="fig04_pipeline_parallel_flow.png" alt="Pipeline" /> <img
+src="fig08_pairs_by_year_2015_2024.png" alt="Pairs by Year" /></p>
+<h3 id="main-effects">Main effects</h3>
+<p><img src="fig06_yearly_or10_trend_2015_2024.png"
+alt="Yearly OR Trend" /> <img
+src="fig01_delay_rate_by_prev_delay_bin_2024.png"
+alt="Delay Rate by Previous Delay Bin" /> <img
+src="fig07_yearly_linear_minutes_trend_2015_2024.png"
+alt="Yearly Linear Trend" /></p>
+<h3 id="heterogeneity">Heterogeneity</h3>
+<p><img src="fig03_carryover_by_turnaround_bin_2024.png"
+alt="Turnaround Heterogeneity" /> <img
+src="fig02_carryover_by_airline_2024.png" alt="Airline Heterogeneity" />
+<img src="fig09_airline_top_bottom_2024.png"
+alt="Airline Top/Bottom" /></p>
+<hr />
+<h2 id="common-mistakes-to-avoid-in-presentation">13) Common Mistakes to
+Avoid in Presentation</h2>
+<ul>
+<li>Do not say “causes” unless causal identification is explicitly
+done.</li>
+<li>Do not over-interpret airline ranking without sample-size
+context.</li>
+<li>Do not use linear R-squared as the main success metric.</li>
+<li>Do not skip the turnaround story; it is the strongest operational
+result.</li>
+<li>Do not present 2024 heterogeneity as if it is a full 10-year
+heterogeneity study.</li>
+</ul>
+<hr />
+<h2 id="second-closing-script-team-can-read-verbatim">14) 45-Second
+Closing Script (Team Can Read Verbatim)</h2>
+<p>“Using 10 years of BTS domestic flight data and over 53 million
+same-aircraft flight pairs, we find stable delay propagation from one
+leg to the next. In logistic terms, every additional 10 minutes of
+previous arrival delay is associated with roughly 1.45 times the odds of
+severe departure delay on the next leg. In linear terms, that
+corresponds to about 5 extra minutes of departure delay carried forward.
+The strongest heterogeneity is turnaround time: short-turn flights show
+much higher propagation, which suggests schedule buffer design is a
+practical lever for improving reliability.”</p>
+<hr />
+<h2 id="files-to-share-with-teammates">15) Files to Share With
+Teammates</h2>
+<ul>
+<li>This SOP (Markdown):
+<ul>
+<li><code>/Users/liyuang/Desktop/stat605/results/report_figures/team_slides_playbook_en.md</code></li>
+</ul></li>
+<li>HTML version:
+<ul>
+<li><code>/Users/liyuang/Desktop/stat605/results/report_figures/team_slides_playbook_en.html</code></li>
+</ul></li>
+<li>PDF version:
+<ul>
+<li><code>/Users/liyuang/Desktop/stat605/results/report_figures/team_slides_playbook_en.pdf</code></li>
+</ul></li>
+</ul>
+</body>
+</html>
